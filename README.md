@@ -51,8 +51,8 @@ $ python [file].py hello --greeting=Wazzup --caps Kyle
 WAZZUP, KYLE!
 </pre>
 
-##### Atribution
-[Tutorial](https://realpython.com/comparing-python-command-line-parsing-libraries-argparse-docopt-click/)By [Kyle
+##### Attribution
+[Tutorial](https://realpython.com/comparing-python-command-line-parsing-libraries-argparse-docopt-click/) By [Kyle
 Purdon](https://realpython.com/comparing-python-command-line-parsing-libraries-argparse-docopt-click/#author)
 
 
