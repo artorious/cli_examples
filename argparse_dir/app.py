@@ -2,32 +2,37 @@
 import argparse
 
 
-def hello(username):
-    """ (str) -> stdout
+def greet(cli_params):
+    """ (Namespace) -> stdout
 
-        Say Hello <username>
+        Display custom <greeting> to user<name>
     """
-    print('Hello, {0}!'.format(username.name))
+    output = '{0}, {1}!'.format(cli_params.greeting, cli_params.name)
+    if cli_params.caps:
+        output = output.upper()
+    print(output)
 
-
-def goodbye(username):
-    """ (str) -> stdout
-
-        Say Goodbye <username>
-    """
-    print('Goodbye, {0}!'.format(username.name))
-
-PARSER = argparse.ArgumentParser(
-        description='Program says hello or goodbye to provided user name.')
+PARSER = argparse.ArgumentParser(description='Program displays a custom \
+    greeting to provided username.')
 SUBPARSERS = PARSER.add_subparsers()
 
 HELLO_PARSER = SUBPARSERS.add_parser('hello', help='Say hello to user')
 HELLO_PARSER.add_argument('name', help='username')  # Add name arg
-HELLO_PARSER.set_defaults(func=hello)  # Set as Default function
+HELLO_PARSER.add_argument('--greeting', default='Hello',
+                          help='Custom greeting w/ default')
+HELLO_PARSER.add_argument('--caps', action='store_true',
+                          help='sets greeting to ALL CAPS - boolean flag, \
+                                  default set to FALSE')
+HELLO_PARSER.set_defaults(func=greet, help='Default function')
 
 GOODBYE_PARSER = SUBPARSERS.add_parser('goodbye', help='Say goodbye to user')
 GOODBYE_PARSER.add_argument('name', help='username')
-GOODBYE_PARSER.set_defaults(func=goodbye)
+GOODBYE_PARSER.add_argument('--greeting', default='goodbye',
+                            help='Custom greeting w/ default')
+GOODBYE_PARSER.add_argument('--caps', action='store_true',
+                            help='sets greeting to ALL CAPS - boolean flag \
+                                    set to FALSE')
+GOODBYE_PARSER.set_defaults(func=greet, help='Default function')
 
 if __name__ == '__main__':
     ARGS = PARSER.parse_args()
