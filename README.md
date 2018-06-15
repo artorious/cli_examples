@@ -10,7 +10,7 @@ Compares each library for implementing the following features:
 Additional features:
 
 * Version Printing <code>-v</code> or <code>--version</code>
-* Automated Help Messages
+* Automated Help Messages <code>-h</code> or <code>--help</code>
 * Error Handling
 
 
@@ -20,6 +20,9 @@ Additional features:
 * Install and setup [Virtual
   Envrionment](http://docs.python-guide.org/en/latest/dev/virtualenvs/) and [Virtual environment
   wrapper](https://virtualenvwrapper.readthedocs.io/en/latest/install.html)
+* [Download](https://github.com/artorious/cli_examples/archive/master.zip) or Clone this repo 
+<code>git clone https://github.com/artorious/cli_examples.git</code>
+* Navigate into the repos root dir
 * Install Required Dependancies
         <code>$ pip install -r requirements.txt</code>  
 
