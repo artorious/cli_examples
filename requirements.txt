@@ -50,7 +50,7 @@ piston-mini-client==0.7.5
 plainbox==0.25
 pluggy==0.6.0
 ptyprocess==0.5
-py==1.5.3
+py==1.10.0
 pyasn1==0.1.9
 pycrypto==2.6.1
 pycups==1.9.73
